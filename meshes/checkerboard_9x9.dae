@@ -5,8 +5,8 @@
       <author>Blender User</author>
       <authoring_tool>Blender 2.69.1 r60892</authoring_tool>
     </contributor>
-    <created>2013-10-31T10:25:08</created>
-    <modified>2013-10-31T10:25:08</modified>
+    <created>2013-10-31T10:32:05</created>
+    <modified>2013-10-31T10:32:05</modified>
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
@@ -102,27 +102,44 @@
       </extra>
     </light>
   </library_lights>
-  <library_images/>
+  <library_images>
+    <image id="checkerboard_png" name="checkerboard_png">
+      <init_from>checkerboard.png</init_from>
+    </image>
+  </library_images>
   <library_effects>
     <effect id="Material-effect">
       <profile_COMMON>
+        <newparam sid="checkerboard_png-surface">
+          <surface type="2D">
+            <init_from>checkerboard_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="checkerboard_png-sampler">
+          <sampler2D>
+            <source>checkerboard_png-surface</source>
+          </sampler2D>
+        </newparam>
         <technique sid="common">
           <phong>
             <emission>
-              <color sid="emission">0 0 0 1</color>
+              <texture texture="checkerboard_png-sampler" texcoord="UVMap"/>
             </emission>
             <ambient>
-              <color sid="ambient">0 0 0 1</color>
+              <texture texture="checkerboard_png-sampler" texcoord="UVMap"/>
             </ambient>
             <diffuse>
-              <color sid="diffuse">0.64 0.64 0.64 1</color>
+              <texture texture="checkerboard_png-sampler" texcoord="UVMap"/>
             </diffuse>
             <specular>
-              <color sid="specular">0.5 0.5 0.5 1</color>
+              <texture texture="checkerboard_png-sampler" texcoord="UVMap"/>
             </specular>
             <shininess>
               <float sid="shininess">50</float>
             </shininess>
+            <reflective>
+              <texture texture="checkerboard_png-sampler" texcoord="UVMap"/>
+            </reflective>
             <index_of_refraction>
               <float sid="index_of_refraction">1</float>
             </index_of_refraction>
@@ -204,7 +221,9 @@
         <instance_geometry url="#Cube-mesh">
           <bind_material>
             <technique_common>
-              <instance_material symbol="Material-material" target="#Material-material"/>
+              <instance_material symbol="Material-material" target="#Material-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
             </technique_common>
           </bind_material>
         </instance_geometry>
