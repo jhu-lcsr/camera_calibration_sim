@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="board">
+
+  <gazebo>
+    <plugin name="hand_of_god" filename="libgazebo_ros_hand_of_god.so">
+      <linkName>checkerboard</linkName>
+      <frameId>hog</frameId>
+      <kl>200</kl>
+      <ka>200</ka>
+    </plugin>
+  </gazebo>
+
+  <link name="checkerboard">
+    <collision>
+      <geometry>
+        <!-- 2-inch square -->
+        <mesh 
+          scale="0.0508 0.0508 0.0508" 
+          filename="$(find camera_calibration_sim)/meshes/checkerboard_9x9.dae"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <geometry>
+        <!-- 2-inch square -->
+        <mesh 
+          scale="0.0508 0.0508 0.0508" 
+          filename="$(find camera_calibration_sim)/meshes/checkerboard_9x9.dae"/>
+      </geometry>
+    </visual>
+
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value=".1"/>
+      <inertia 
+        ixx="0.1" ixy="0.0" ixz="0.0" 
+        iyy="0.1" iyz="0.0" 
+        izz="0.1"/>
+    </inertial>
+
+  </link>
+
+  
+
+</robot>
+

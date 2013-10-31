@@ -3,7 +3,7 @@
   <version>0.1.0</version>
   <license>BSD</license>
   <maintainer email="jbo@jhu.edu">Jonathan Bohren</maintainer>
-  <author email="jbo@jhu.edu">Jonathan Bohren</maintainer>
+  <author email="jbo@jhu.edu">Jonathan Bohren</author>
   <description>
     This package contains tools for simulating camera calibration tools with
     the gazebo simulator.
