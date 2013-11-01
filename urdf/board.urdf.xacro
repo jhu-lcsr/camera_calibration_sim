@@ -3,14 +3,14 @@
 
   <gazebo>
     <plugin name="hand_of_god" filename="libgazebo_ros_hand_of_god.so">
-      <linkName>checkerboard</linkName>
+      <linkName>board_link</linkName>
       <frameId>hog</frameId>
       <kl>200</kl>
       <ka>200</ka>
     </plugin>
   </gazebo>
 
-  <link name="checkerboard">
+  <link name="board_link">
     <collision>
       <geometry>
         <!-- 2-inch square -->

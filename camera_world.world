@@ -1,0 +1,63 @@
+<sdf version='1.4'>
+  <world name='default'>
+    <light name='bottom' type='point'>
+      <cast_shadows>1</cast_shadows>
+      <pose>0.05 0.0 0.5 0 0 0</pose>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>20</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.0</quadratic>
+      </attenuation>
+    </light>
+    <light name='top' type='point'>
+      <cast_shadows>1</cast_shadows>
+      <pose>0.05 0.0 1.5 0 0 0</pose>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>20</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.0</quadratic>
+      </attenuation>
+    </light>
+    <light name='right' type='point'>
+      <cast_shadows>1</cast_shadows>
+      <pose>0.05 0.3 1.0 0 0 0</pose>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>20</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.0</quadratic>
+      </attenuation>
+    </light>
+    <light name='left' type='point'>
+      <cast_shadows>1</cast_shadows>
+      <pose>0.05 -0.3 1.0 0 0 0</pose>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>20</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.0</quadratic>
+      </attenuation>
+    </light>
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+      <gravity>0 0 -9.8</gravity>
+    </physics>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.0 0.0 0.0 1</background>
+      <shadows>1</shadows>
+    </scene>
+  </world>
+</sdf>
