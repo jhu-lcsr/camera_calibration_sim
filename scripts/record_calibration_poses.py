@@ -27,7 +27,12 @@ class SampleRecorder(object):
         self.last_image = msg
 
     def sampled_cb(self, msg):
-        (trans,rot) = self.listener.lookupTransform('/board_link','/camera_link',rospy.Time(0))
+        try:
+            (trans,rot) = self.listener.lookupTransform('/board_link','/camera_link',rospy.Time(0))
+        except:
+            trans = [0,0,0]
+            rot = [1,0,0,0]
+
         self.poses.append([trans,rot])
         rospy.loginfo("Recorded sample: " + str(trans) + " | " + str(rot) )
 
